@@ -22,6 +22,11 @@ function updateCountdown() {
     if (value === 1) {
       unit = unit.slice(0, -1); 
     }
+    
+    // Don't display 0 months 
+    if (value === 0 && unit === 'month') {
+      return; 
+    }
 
     el.querySelector('.value').textContent = value;
     el.querySelector('.unit').textContent  = unit;
