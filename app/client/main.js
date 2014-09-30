@@ -9,26 +9,28 @@ var elements = [
   document.querySelector('.seconds')
 ];
 
+var ONE_SECOND = 1000;
+
 function updateCountdown() {
 
   // Halloween night dawg
   var countdown = moment('2014-10-31').countdown();
 
   elements.forEach(function(el) {
-    var unit  = el.getAttribute('data-countdown');
+    var unit  = el.getAttribute('data-unit');
     var value = countdown[unit];
 
-    // Singular
+    // Singularize
     if (value === 1) {
-      unit = unit.slice(0, -1); 
+      unit = unit.slice(0, -1);
     }
-    
-    // Don't display 0 months 
+
+    // Don't display 0 months
     if (value === 0 && unit === 'month') {
       el.querySelector('.value').textContent = '';
       el.querySelector('.unit').textContent  = '';
 
-      return; 
+      return;
     }
 
     el.querySelector('.value').textContent = value;
@@ -41,4 +43,4 @@ updateCountdown();
 // Update every second
 setInterval(function() {
   updateCountdown();
-}, 1000);
+}, ONE_SECOND);
