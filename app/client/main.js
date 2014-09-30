@@ -9,8 +9,8 @@ var elements = [
   document.querySelector('.seconds')
 ];
 
-var UPDATE_INTERVAL = 1000;
 var RELEASE_DATE    = '2014-11-01';
+var UPDATE_INTERVAL = 1000;
 
 function updateCountdown() {
   var countdown = moment(RELEASE_DATE).countdown();
