@@ -12,17 +12,19 @@ module.exports = function(grunt) {
   // Load task configs
   grunt.initConfig({
     clean      : require('./tasks/clean.js')(grunt),
-    //browserify : require('./tasks/browserify.js')(grunt),
+    browserify : require('./tasks/browserify.js')(grunt),
     //uglify     : require('./tasks/uglify.js')(grunt),
     copy       : require('./tasks/copy.js')(grunt),
-    //less       : require('./tasks/less.js')(grunt),
+    less       : require('./tasks/less.js')(grunt),
     //jshint     : require('./tasks/jshint.js')(grunt),
-    //watch      : require('./tasks/watch.js')(grunt)
+    watch      : require('./tasks/watch.js')(grunt)
   });
 
   // Release
   grunt.registerTask('build', [
     'clean',
-    'copy'
+    'copy',
+    'less',
+    'browserify'
   ]);
 };
