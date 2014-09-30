@@ -23,10 +23,8 @@ function updateCountdown() {
       unit = unit.slice(0, -1); 
     }
 
-    // Only show if not zero
-    if (value !== 0) {
-      el.innerHTML = value + ' ' + unit;
-    }
+    el.querySelector('.value').textContent = value;
+    el.querySelector('.unit').textContent  = unit;
   });
 }
 
