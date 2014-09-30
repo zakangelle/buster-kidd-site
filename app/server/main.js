@@ -8,9 +8,7 @@ var app = express();
 
 // Dat countdown
 app.get('/', function(req, res) {
-  res.sendFile('index.html', {
-    root: WEB_ROOT 
-  });
+  res.sendFile(path.join(WEB_ROOT, 'index.html'));
 });
 
 // Serve static content

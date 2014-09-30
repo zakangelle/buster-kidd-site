@@ -4,6 +4,7 @@
   "description": "The Kidd has arrived.",
   "main": "index.js",
   "scripts": {
+    "postinstall": "npm run build",
     "build": "grunt build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ./app/server/main.js",
