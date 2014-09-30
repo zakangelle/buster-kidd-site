@@ -6,9 +6,11 @@ var WEB_ROOT = path.resolve(path.join(__dirname, '../../dist'));
 
 var app = express();
 
-// Dat countdown 
+// Dat countdown
 app.get('/', function(req, res) {
-  res.sendFile(path.join(WEB_ROOT, 'index.html'));
+  res.sendFile('index.html', {
+    root: WEB_ROOT 
+  });
 });
 
 // Serve static content
