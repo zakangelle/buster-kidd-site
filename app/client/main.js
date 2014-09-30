@@ -9,7 +9,7 @@ var elements = [
   document.querySelector('.seconds')
 ];
 
-var ONE_SECOND = 1000;
+var UPDATE_INTERVAL = 1000;
 
 function updateCountdown() {
 
@@ -17,8 +17,10 @@ function updateCountdown() {
   var countdown = moment('2014-10-31').countdown();
 
   elements.forEach(function(el) {
-    var unit  = el.getAttribute('data-unit');
-    var value = countdown[unit];
+    var unit    = el.getAttribute('data-unit');
+    var value   = countdown[unit];
+    var unitEl  = el.querySelector('.unit');
+    var valueEl = el.querySelector('.value');
 
     // Singularize
     if (value === 1) {
@@ -27,14 +29,14 @@ function updateCountdown() {
 
     // Don't display 0 months
     if (value === 0 && unit === 'month') {
-      el.querySelector('.value').textContent = '';
-      el.querySelector('.unit').textContent  = '';
+      valueEl.textContent = '';
+      unitEl.textContent  = '';
 
       return;
     }
 
-    el.querySelector('.value').textContent = value;
-    el.querySelector('.unit').textContent  = unit;
+    valueEl.textContent = value;
+    unitEl.textContent  = unit;
   });
 }
 
@@ -43,4 +45,4 @@ updateCountdown();
 // Update every second
 setInterval(function() {
   updateCountdown();
-}, ONE_SECOND);
+}, UPDATE_INTERVAL);
