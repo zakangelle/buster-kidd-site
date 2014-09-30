@@ -10,11 +10,10 @@ var elements = [
 ];
 
 var UPDATE_INTERVAL = 1000;
+var RELEASE_DATE    = '2014-11-01';
 
 function updateCountdown() {
-
-  // Halloween night dawg
-  var countdown = moment('2014-10-31').countdown();
+  var countdown = moment(RELEASE_DATE).countdown();
 
   elements.forEach(function(el) {
     var unit    = el.getAttribute('data-unit');
