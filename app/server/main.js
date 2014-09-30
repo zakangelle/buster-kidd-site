@@ -6,9 +6,9 @@ var WEB_ROOT = path.resolve(path.join(__dirname, '../../dist'));
 
 var app = express();
 
-// Web app endpoint
+// Dat countdown 
 app.get('/', function(req, res) {
-  res.end('Buster Kidd 2014');
+  res.sendFile(path.join(WEB_ROOT, 'index.html'));
 });
 
 // Serve static content
