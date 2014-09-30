@@ -7,8 +7,8 @@ var WEB_ROOT = path.resolve(path.join(__dirname, '../../dist'));
 var app = express();
 
 // Web app endpoint
-app.get('/test', function(req, res) {
-  res.end('Hello, World! From the server.');
+app.get('/', function(req, res) {
+  res.end('Buster Kidd 2014');
 });
 
 // Serve static content
