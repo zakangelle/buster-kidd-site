@@ -16,13 +16,28 @@ body {
   position: relative;
   top: 45%;
   transform: translateY(-50%);
+
+
+  @media (max-width: 800px) {
+    top: 38%;
+  }
 }
 
 .countdown {
   text-align: center;
 
+  @media (max-width: 800px) {
+    text-align: left;
+  }
+
   >span {
     margin-right: 12px;
+    
+    @media (max-width: 800px) {
+      margin: 0 auto;
+      width: 210px;
+      display: block;
+    }
   }
 
   .value {
@@ -34,4 +49,3 @@ body {
     font-size: 36px;
   }
 }
-
