@@ -27,7 +27,7 @@ function updateCountdown() {
     }
 
     // Don't display 0 months
-    if (value === 0 && unit === 'month') {
+    if (value === 0 && unit === 'months') {
       valueEl.textContent = '';
       unitEl.textContent  = '';
 
