@@ -26,6 +26,14 @@ function updateCountdown() {
       unit = unit.slice(0, -1);
     }
 
+    // Don't display 0 days
+    if (value === 0 && unit === 'days') {
+      valueEl.textContent = '';
+      unitEl.textContent  = '';
+
+      return;
+    }
+
     // Don't display 0 months
     if (value === 0 && unit === 'months') {
       valueEl.textContent = '';
