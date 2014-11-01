@@ -13,9 +13,11 @@ var RELEASE_DATE    = '2014-10-31 23:59:59';
 var UPDATE_INTERVAL = 1000;
 
 // Update countdown at specified interval
+/*
 var updateCountdownInterval = setInterval(function() {
   updateCountdown();
 }, UPDATE_INTERVAL);
+*/
 
 function updateCountdown() {
   var countdown = moment(RELEASE_DATE).countdown();
@@ -28,7 +30,7 @@ function updateCountdown() {
     countdown.seconds === 0) {
     releaseAlbum();
 
-    clearInterval(updateCountdownInterval);
+    //clearInterval(updateCountdownInterval);
   }
 
   elements.forEach(function(el) {
@@ -85,4 +87,4 @@ function releaseAlbum() {
 
 }
 
-updateCountdown();
+//updateCountdown();
