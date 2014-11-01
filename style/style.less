@@ -21,6 +21,12 @@ body {
   @media (max-width: 800px) {
     top: 38%;
   }
+
+  &.released {
+    @media (max-width: 800px) {
+      top: 26%;
+    }
+  }
 }
 
 .countdown {
@@ -63,4 +69,24 @@ body {
   &:hover {
     text-decoration: underline;
   }
+}
+.bandcamp-player {
+  text-align: center;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.fade {
+  opacity: 0;
+  transition: opacity 3s linear;
+}
+
+.hide {
+  display: none;
+}
+
+.in {
+  opacity: 1;
 }
