@@ -3,6 +3,9 @@
   "version": "0.0.0",
   "description": "The Kidd has arrived.",
   "main": "./app/client/main.js",
+  "engines": {
+    "node": "0.10.33"
+  },
   "scripts": {
     "postinstall": "npm run build",
     "build": "grunt build",
